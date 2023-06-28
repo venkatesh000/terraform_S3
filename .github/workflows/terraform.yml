@@ -1,0 +1,26 @@
+name: Create S3 Bucket
+
+on:
+  push:
+    branches:
+      - main.tf  # Replace with the branch name where your Terraform code is located
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Plan Changes
+        run: terraform plan
+
+      - name: Apply Changes
+        run: terraform apply -auto-approve
