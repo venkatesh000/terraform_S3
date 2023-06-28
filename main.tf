@@ -1,7 +1,7 @@
 provider "aws" {
-  region     = "us-west-2"
-  access_key = "my-access-key"   #enter here access_key
-  secret_key = "my-secret-key"   #enter here secret _key
+  region     = "us-east-1"
+  #access_key = "my-access-key"   #enter here access_key
+  #secret_key = "my-secret-key"   #enter here secret _key
 }
 resource "aws_s3_bucket" "bucket" {
   bucket = "Create S3 bucket & Upload"
